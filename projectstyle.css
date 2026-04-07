@@ -1,0 +1,472 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Futura;
+  src: url(fonts/futuralt_bold.ttf);
+}
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  color: #1A1A1A;
+  overflow-x: hidden;
+  line-height: 1.4;
+  background: #0a0a0a;   /* основной тёмный фон */
+
+}
+
+/* ====================== HEADER ====================== */
+header {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1410px;
+  max-width: 92%;
+  height: 75px;
+  padding: 0 40px;
+  border-radius: 60px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4),
+              inset 0 1px 1px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+}
+
+.header-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+
+.header-nav a:hover {
+  color: #55CCFF;
+}
+
+.header-nav a.active {
+  color: #55CCFF;
+}
+
+.header-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: #55CCFF;
+  border-radius: 50%;
+}
+
+/* Бургер */
+.burger {
+  position: absolute;
+  left: 37px;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(20px);
+  padding: 30px 0;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* ====================== PROJECTS ====================== */
+.projects-section {
+  padding-top: 180px;
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+}
+
+.projects-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 120px;
+  letter-spacing: -0.02em;
+  font-family: Futura;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 120px;
+  flex-wrap: wrap;
+  font-size: 32px;
+}
+
+.filter-btn {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(85, 204, 255, 0.15);
+  border-color: #55CCFF;
+  color: #55CCFF;
+}
+
+.filter-btn.active {
+  background: #55CCFF;
+  color: #000;
+  border-color: #55CCFF;
+}
+
+/* Сетка 2 столбца × 3 строки */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Стили карточки с плашкой */
+.project-card {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Информационная плашка (появляется снизу) */
+.project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  border-radius: 50px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.404) 0%, rgba(255, 255, 255, 0.37) 70%, transparent 100%);
+  backdrop-filter: blur(8px);
+  padding: 30px 30px 5px;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  text-align: left;
+  border: 1px solid #d4d4d4c0;
+  
+}
+
+.project-card:hover .project-info {
+  transform: translateY(0);
+}
+
+.project-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+  letter-spacing: -0.3px;
+}
+
+.project-details {
+  font-size: 28px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Пагинация */
+.pagination {
+  margin: 40px auto 60px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 240px;
+}
+
+.arrow-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #55CCFF;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* ====================== FOOTER ====================== */
+footer {
+  position: relative;
+  background: #000000;
+  padding: 40px 0 80px;           /* верхний отступ + большой нижний отступ 80px */
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 240px;                   
+}
+
+/* Градиентный переход от контента к футеру */
+footer::before {
+  content: '';
+  position: absolute;
+  top: -180px;                     /* увеличил зону перехода */
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    rgba(10,10,10,0.4) 30%, 
+    rgba(0,0,0,0.85) 60%, 
+    #000000 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer-content {
+  width: 1410px;
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 58px;
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 26px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-icons a:hover {
+  color: #55CCFF;
+  transform: translateY(-2px);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .projects-title {
+    font-size: 52px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .filter-btn {
+    padding: 10px 24px;
+    font-size: 18px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .project-details {
+    font-size: 12px;
+  }
+  
+  .project-info {
+    padding: 15px 15px 20px;
+  }
+}
+
+/* PRELOADER */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.6s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-video {
+  width: 180px;           /* размер видео — можно менять */
+  height: 180px;
+  
+  object-fit: cover;
+  
+}
+
+.loader-text {
+  margin-top: 30px;
+  color: #cfcfe8;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+/* ====================== SCROLL TO TOP BUTTON ====================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+  /* Начальное состояние — скрыта и прозрачна */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px) scale(0.8);
+}
+
+.scroll-to-top:hover {
+  background: #55CCFF;
+  transform: scale(1.12);
+  box-shadow: 0 12px 35px rgba(85, 204, 255, 0.6);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+  }
+}

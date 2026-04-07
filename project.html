@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мокрушин Иван — 3D-Designer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="projectstyle.css"/>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <video class="loader-video" autoplay muted loop playsinline>
+    <source src="doc_2025-09-11_12-12-56.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="overlay"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <!-- БУРГЕР -->
+    <div class="burger" id="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="header-nav">
+      <a href="index.html">Главная</a>
+      <a href="about.html">Обо мне</a>
+      <a href="#" class="active">Проекты</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+
+    <!-- Мобильное меню (пока скрыто) -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#">Главная</a>
+      <a href="#">Обо мне</a>
+      <a href="#" class="active">Проекты</a>
+      <a href="#">Контакты</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- SECTION ПРОЕКТЫ -->
+  <section class="projects-section">
+    <h1 class="projects-title">Проекты</h1>
+
+    <!-- Фильтры -->
+    <div class="filters">
+      <button class="filter-btn active">Low-poly</button>
+      <button class="filter-btn">Game ready</button>
+      <button class="filter-btn">Animation</button>
+      <button class="filter-btn">Другие</button>
+    </div>
+
+    <!-- Галерея 3×2 -->
+<div class="projects-grid">
+  <!-- Карточка 1 -->
+  <div class="project-card" data-link="pr1.html">
+    <img src="img/Untitled22.png" alt="Project 1">
+    <div class="project-info">
+      <h3 class="project-name">Dark snow road</h3>
+      <p class="project-details">Год создания: 2025<br>Кол-во полигонов: 2078</p>
+    </div>
+  </div>
+
+  <!-- Карточка 2 -->
+  <div class="project-card" data-link="pr2.html">
+    <img src="img/work2.jpg" alt="Project 2">
+    <div class="project-info">
+      <h3 class="project-name">Chain demon</h3>
+      <p class="project-details">Год создания: 2024<br>Кол-во полигонов: 30 744</p>
+    </div>
+  </div>
+
+  <!-- Карточка 3 -->
+  <div class="project-card" data-link="pr3.html">
+    <img src="img/work1.png" alt="Project 3">
+    <div class="project-info">
+      <h3 class="project-name">Fall in the sky</h3>
+      <p class="project-details">Год создания: 2025<br>Кол-во полигонов: 509 374</p>
+    </div>
+  </div>
+
+  <!-- Карточка 4 -->
+  <div class="project-card" data-link="pr4.html">
+    <img src="img/work3.jpg" alt="Project 4">
+    <div class="project-info">
+      <h3 class="project-name">Broken glass</h3>
+      <p class="project-details">Год создания: 2024<br>Кол-во полигонов: 74 532</p>
+    </div>
+  </div>
+
+  <!-- Карточка 5 -->
+  <div class="project-card" data-link="pr5.html">
+    <img src="img/work4.png" alt="Project 5">
+    <div class="project-info">
+      <h3 class="project-name">Robot for kitchen</h3>
+      <p class="project-details">Год создания: 2024<br>Кол-во полигонов: 17 239</p>
+    </div>
+  </div>
+
+  <!-- Карточка 6 -->
+  <div class="project-card" data-link="pr6.html">
+    <img src="img/photo_2026-03-31_22-37-12.jpg" alt="Project 6">
+    <div class="project-info">
+      <h3 class="project-name">Tress for game</h3>
+      <p class="project-details">Год создания: 2026<br>Кол-во полигонов: 5890</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Пагинация -->
+    <div class="pagination">
+      <button class="arrow-btn" id="prev-btn">←</button>
+      <button class="arrow-btn" id="next-btn">→</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <p>© Мокрушин Иван</p>
+    
+    <div class="footer-icons">
+      <a href="#" title="Telegram"><svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M51.0905 11.4441C51.7289 11.1754 52.4276 11.0827 53.114 11.1757C53.8004 11.2687 54.4492 11.544 54.9931 11.9728C55.537 12.4017 55.956 12.9685 56.2065 13.6143C56.4569 14.26 56.5298 14.9611 56.4173 15.6446L50.5583 51.1835C49.99 54.6116 46.2287 56.5775 43.0848 54.8699C40.4549 53.4413 36.5489 51.2403 33.0356 48.9437C31.2789 47.7942 25.8978 44.1129 26.5592 41.4934C27.1275 39.2537 36.1692 30.8372 41.3358 25.8332C43.3638 23.8673 42.4389 22.7332 40.0442 24.5416C34.0973 29.0314 24.5493 35.8592 21.3925 37.7812C18.6077 39.4758 17.1558 39.7652 15.4198 39.4758C12.2527 38.9488 9.31542 38.1325 6.91809 37.1379C3.67859 35.7946 3.83617 31.3409 6.9155 30.0441L51.0905 11.4441Z" fill="currentColor"/>
+</svg>
+</a>
+      <a href="#" title="Email"><svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.3337 51.6663C8.91283 51.6663 7.69694 51.1609 6.68599 50.1499C5.67505 49.139 5.16871 47.9222 5.16699 46.4997V15.4997C5.16699 14.0788 5.67333 12.863 6.68599 11.852C7.69866 10.8411 8.91455 10.3347 10.3337 10.333H51.667C53.0878 10.333 54.3046 10.8393 55.3172 11.852C56.3299 12.8647 56.8354 14.0806 56.8337 15.4997V46.4997C56.8337 47.9205 56.3282 49.1373 55.3172 50.1499C54.3063 51.1626 53.0895 51.6681 51.667 51.6663H10.3337ZM31.0003 33.583L10.3337 20.6663V46.4997H51.667V20.6663L31.0003 33.583ZM31.0003 28.4163L51.667 15.4997H10.3337L31.0003 28.4163ZM10.3337 20.6663V15.4997V46.4997V20.6663Z" fill="currentColor"/>
+</svg>
+</a>
+      <a href="#" title="Phone"> <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M49.6778 39.4217L43.1162 38.6726C42.3446 38.5819 41.5626 38.6674 40.8288 38.9224C40.095 39.1774 39.4286 39.5955 38.8795 40.1451L34.1262 44.8984C26.7931 41.1679 20.8325 35.2073 17.102 27.8742L21.8812 23.0951C22.992 21.9842 23.5345 20.4342 23.3537 18.8584L22.6045 12.3484C22.4586 11.0879 21.854 9.92528 20.9059 9.082C19.9578 8.23872 18.7325 7.77381 17.4637 7.77589H12.9945C10.0754 7.77589 7.64702 10.2042 7.82785 13.1234C9.19702 35.1851 26.8412 52.8034 48.877 54.1726C51.7962 54.3534 54.2245 51.925 54.2245 49.0059V44.5367C54.2504 41.9276 52.287 39.7317 49.6778 39.4217Z" fill="currentColor"/>
+</svg>
+</a>
+    </div>
+  </div>
+</footer>
+
+<script src="projectjs.js" defer></script>
+
+<!-- Кнопка "Вверх" -->
+<button id="scrollToTop" class="scroll-to-top" aria-label="Вернуться вверх">
+  ↑
+</button>
+</body>
+</html>

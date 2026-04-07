@@ -1,0 +1,462 @@
+/* ====================== PROJECTS PAGE ====================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Futura;
+  src: url(fonts/futuralt_bold.ttf);
+}
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* ====================== HEADER ====================== */
+header {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1410px;
+  max-width: 92%;
+  height: 75px;
+  padding: 0 40px;
+  border-radius: 60px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4),
+              inset 0 1px 1px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+}
+
+.header-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header-nav a:hover {
+  color: #55CCFF;
+}
+
+.header-nav a.active {
+  color: #55CCFF;
+}
+
+.header-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: #55CCFF;
+  border-radius: 50%;
+}
+
+/* ====================== MAIN ====================== */
+.projects-section {
+  padding-top: 220px;
+  min-height: 100vh;
+  background: #0a0a0a;
+}
+
+.content-wrapper {
+  width: 1450px;
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.project-title {
+  font-size: 64px;
+  
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 120px;
+  font-family: Futura;
+}
+
+.project-main-image {
+  max-width: 1410px;
+  margin: 0 auto 60px;
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  border: 20px #fcfcfc80;
+  margin-bottom: 40px;
+}
+
+.project-main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Навигация проектов */
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 80px auto 120px;   /* верхний отступ фиксированный, нижний — как был */
+  max-width: 1410px;         /* чтобы центрировалось как остальной контент */
+}
+
+.nav-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 25px 61px;
+  border-radius: 50px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #55CCFF;
+}
+
+.nav-btn:active {
+  background: rgba(85, 204, 255, 0.15);
+  border-color: #55ccff;
+  color: #ffffff;
+}
+
+/* Контент проекта */
+.project-content {
+  display: grid;
+  grid-template-columns: 700px 600px;
+  gap: 80px;
+  max-width: 1410px;
+  margin-bottom: 120px;
+}
+
+.project-info h3 {
+  font-size: 32px;
+  margin: 20px 0 0px;
+  color: #ffffff;
+}
+
+.project-info p {
+  font-size: 32px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.project-meta .meta-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 60px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;                    /* ← изменил с 30px на 40px */
+}
+
+.meta-box p {
+  margin-bottom: px;
+  font-size: 32px;
+}
+
+.meta-box strong {
+  color: #fff;
+}
+
+/* ====================== СКРИНШОТЫ РАБОТЫ ====================== */
+.screenshots-section {
+  max-width: 1410px;
+  margin: 120px auto 80px;
+}
+
+.screenshots-title {
+  font-size: 48px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 240px;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: 780px 567px;
+  gap: 30px;
+  align-items: end;           /* ← главное изменение: выравнивание по низу */
+  position: relative;
+}
+
+.screenshots-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Правый большой скриншот теперь всегда прижат к низу */
+.screenshots-right {
+  display: flex;
+  align-items: flex-end;     /* прижимает содержимое к низу колонки */
+  height: 100%;
+}
+
+.screenshot {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  background: #111;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshot:hover {
+  transform: scale(1.06);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+.screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshot:hover img {
+  transform: scale(1.12);
+}
+
+/* Большой скриншот справа */
+.screenshot.big {
+  width: 100%;
+  /* height убираем — теперь он растягивается автоматически */
+}
+
+.screenshot.big img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Основной стиль скриншота */
+.screenshot {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  background: #111;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshot:hover {
+  transform: scale(1.06);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+.screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshot:hover img {
+  transform: scale(1.12);
+}
+
+/* Большой скриншот справа */
+.screenshot.big {
+  height: 1050x;                    /* занимает всю доступную высоту */
+}
+
+.screenshot.big img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ====================== FOOTER ====================== */
+footer {
+  position: relative;
+  background: #000000;
+  padding: 40px 0 80px;           /* верхний отступ + большой нижний отступ 80px */
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 240px;                   
+}
+
+/* Градиентный переход от контента к футеру */
+footer::before {
+  content: '';
+  position: absolute;
+  top: -180px;                     /* увеличил зону перехода */
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    rgba(10,10,10,0.4) 30%, 
+    rgba(0,0,0,0.85) 60%, 
+    #000000 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer-content {
+  width: 1410px;
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 58px;
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 26px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-icons a:hover {
+  color: #55CCFF;
+  transform: translateY(-2px);
+}
+/* Адаптив */
+@media (max-width: 992px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .project-title {
+    font-size: 52px;
+  }
+}
+
+/* ====================== PRELOADER ====================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.6s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-video {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* делает видео круглым, как на главной */
+}
+
+/* ====================== SCROLL TO TOP BUTTON ====================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+  /* Начальное состояние — скрыта и прозрачна */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px) scale(0.8);
+}
+
+.scroll-to-top:hover {
+  background: #55CCFF;
+  transform: scale(1.12);
+  box-shadow: 0 12px 35px rgba(85, 204, 255, 0.6);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+  }
+}
